@@ -301,4 +301,16 @@ $('.circle-slider span').click(function(){
         left: - width * countSlider + "px"
     },500);
     clearInterval(window.intervaCreate);
+    window.intervaCreate = setInterval(function(){
+        countSlider++;
+        if(countSlider == length){
+            countSlider = 0;
+        }
+        else{}
+        $('.slider-parent').animate({
+            left: - width * countSlider + "px"
+        },500);
+        $('.circle-slider span').removeClass('active');
+        $('.circle-slider span:eq('+countSlider+')').addClass('active');
+    },4000);
 });
